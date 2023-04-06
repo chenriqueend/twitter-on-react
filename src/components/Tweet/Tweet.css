@@ -20,7 +20,10 @@
 .tweet .tweet-content {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+}
+.tweet-content img {
+  height: 1.25rem;
+  width: 1.25rem;
 }
 .tweet .tweet-content .tweet-content-header {
   display: flex;
@@ -61,4 +64,21 @@
 .tweet .tweet-content .tweet-content-footer button svg {
   width: 1.25rem;
   height: 1.25rem;
+}
+
+.arroba {
+  color: var(--twitter-blue);
+  padding-bottom: 0.5rem;
+}
+
+.name-with-seal {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.post-content img {
+  width: 460px;
+  height: auto;
+  border-radius: 20px;
+  padding-top: 1.25rem;
 }

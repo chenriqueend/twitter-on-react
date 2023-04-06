@@ -7,19 +7,48 @@ import { PaperPlaneRight } from "phosphor-react";
 
 export function Status() {
   const [answers, setAnswer] = useState([
-    "teu cu",
-    "tas viajando é",
-    "conversando merda",
+    {
+      key: 1,
+      name: "xablau",
+      arroba: "@elonmusk",
+      content: "falando qualquer merda",
+      img: "https://github.com/chenriqueend.png",
+      likes: 12,
+      retweets: 2,
+      comments: 4,
+    },
+    {
+      key: 2,
+      name: "xablau",
+      arroba: "@elonmusk",
+      content: "falasssndo qualquer merda",
+      img: "https://github.com/chenriqueend.png",
+      likes: 12,
+      retweets: 2,
+      comments: 4,
+    },
+    {
+      key: 3,
+      name: "xablau",
+      arroba: "@elonmusk",
+      content: "falando qualquer merda",
+      img: "https://github.com/chenriqueend.png",
+      likes: 12,
+      retweets: 2,
+      comments: 4,
+    },
   ]);
   const [newAnswer, setNewAnswer] = useState("");
 
   function createNewAnswer(event: FormEvent) {
     event.preventDefault();
+    //@ts-ignore
     setAnswer([newAnswer, ...answers]);
     setNewAnswer("");
   }
-  function handleHoykeySubmit(event: KeyboardEvent) {
+  function handleHotkeySubmit(event: KeyboardEvent) {
     if (event.key == "Enter" && (event.ctrlKey || event.metaKey)) {
+      //@ts-ignore
       setAnswer([newAnswer, ...answers]);
       setNewAnswer("");
     }
@@ -27,12 +56,7 @@ export function Status() {
   return (
     <main className="status">
       <Header title="Tweet" />
-      <Tweet
-        content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim impedit,
-        sit, ad facere consequatur nisi praesentium cumque temporibus dolorem
-        voluptates repellendus quaerat, aliquid nostrum! Atque ea ipsum qui
-        deleniti saepe."
-      />
+      <Tweet content={""} key={0} name={""} arroba={""} />
 
       <Separator />
       <form onSubmit={createNewAnswer} className="answer-tweet-form" action="">
@@ -45,9 +69,9 @@ export function Status() {
             onChange={(event) => {
               setNewAnswer(event.target.value);
             }}
-            id=""
+            key=""
             value={newAnswer}
-            onKeyDown={handleHoykeySubmit}
+            onKeyDown={handleHotkeySubmit}
             placeholder="Tweet your answer"
           />
         </label>
@@ -57,7 +81,14 @@ export function Status() {
         </button>
       </form>
       {answers.map((answer) => {
-        return <Tweet key={answer} content={answer} />;
+        return (
+          <Tweet
+            key={answer.key}
+            content={answer.content}
+            arroba={answer.arroba}
+            name={answer.name}
+          />
+        );
       })}
     </main>
   );
