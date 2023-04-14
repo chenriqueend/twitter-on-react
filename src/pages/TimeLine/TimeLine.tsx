@@ -35,7 +35,7 @@ export function TimeLine() {
       key: 36,
       name: "Jair M. Bolsonaro",
       arroba: "@jairbolsonaro",
-      content: "Finalmente descobri que é golden shower 🤤",
+      content: "Finalmente descobri o que é golden shower 🤤",
       img: "https://pbs.twimg.com/profile_images/1614784189462618112/EUGqFFah_400x400.jpg",
       likes: "12.6k",
       retweets: "8.4k",
@@ -84,7 +84,6 @@ export function TimeLine() {
         <button type="submit">Tweet</button>
       </form>
       <Separator />
-
       {tweets.map((tweet) => {
         return (
           <Tweet
