@@ -47,6 +47,11 @@
   font-weight: 700;
   text-decoration: none;
 }
+.main-navigation a:not(:first-child) {
+  pointer-events: none;
+  cursor: default;
+}
+
 
 .main-navigation a.active {
   color: var(--twitter-blue);

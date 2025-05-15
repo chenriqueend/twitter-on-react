@@ -7,6 +7,17 @@ import "./TimeLine.css";
 export function TimeLine() {
   const [tweets, setTweets] = useState([
     {
+      key: 35,
+      name: "T",
+      arroba: "@tylerthecreator",
+      content: "if the world was ending, i think i would grab some Cinnamon Toast Crunch, a bunch of water, and i'd probably just... I'd probably go crazy.",
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Tyler_the_Creator_%2852163761341%29_%28cropped%29.jpg/1200px-Tyler_the_Creator_%2852163761341%29_%28cropped%29.jpg",
+      likes: "42.3k",
+      retweets: "32.1k",
+      comments: "17.4k",
+      verified: true,
+    },
+    {
       key: 24,
       name: "CHOQUEI",
       arroba: "@choquei",
@@ -35,32 +46,30 @@ export function TimeLine() {
       key: 36,
       name: "Jair M. Bolsonaro",
       arroba: "@jairbolsonaro",
-      content: "Finalmente descobri o que é golden shower 🤤",
+      content: "Finalmente descobri o que é golden shower 😎",
       img: "https://pbs.twimg.com/profile_images/1614784189462618112/EUGqFFah_400x400.jpg",
       likes: "12.6k",
       retweets: "8.4k",
       comments: "11.2k",
       verified: true,
-    },
-
-    {
-      key: 35,
-      name: "T",
-      arroba: "@tylerthecreator",
-      content: "Album novo do tyler ta DOCARALHO vai ouvir ",
-      img: "https://pbs.twimg.com/profile_images/1405605347755139074/kKJuRJS0_400x400.jpg",
-      likes: "42.3k",
-      retweets: "32.1k",
-      comments: "17.4k",
-      verified: true,
-    },
+    },  
   ]);
   const [newTweet, setNewTweet] = useState("");
 
   function createNewTweet(event: FormEvent) {
     event.preventDefault();
-    //@ts-ignore
-    setTweets([newTweet, ...tweets]);
+    const tweetObject = {
+      key: Date.now(),
+      name: "Carlos Henrique",
+      arroba: "@chenriqueend",
+      content: newTweet,
+      img: "https://github.com/chenriqueend.png",
+      likes: "0",
+      retweets: "0",
+      comments: "0",
+      verified: false,
+    };
+    setTweets([tweetObject, ...tweets]);
     setNewTweet("");
   }
   return (
